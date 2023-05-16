@@ -6,12 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="969b5268-bbd1-4c2d-8e57-73ca3e0694b7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ProductPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/Hooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/Hooks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/MyStepdefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/MyStepdefs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testConfig/TestData.Properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testConfig/TestData.Properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,6 +120,17 @@
       <updated>1684005257125</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
