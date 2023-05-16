@@ -10,6 +10,7 @@ public class ProductPage extends Utils{
     private By _typePersonalMessage = By.xpath("//textarea[starts-with(@name,'Personal')]");
     private By _sendEmailButton = By.xpath("//button[text()='Send email']");
     private By _sendEmailMessage = By.xpath("//div[@class='result']");
+    private By _productPageTitle = By.xpath("//h1[text()='Apple MacBook Pro 13-inch']");
     public void emailaFriendButton(){
         //click on email a friend button
         clickOnElement(_emailAFriendButton);
@@ -31,6 +32,15 @@ public class ProductPage extends Utils{
         String actualMessage = getTextFromElement(_sendEmailMessage);
         Assert.assertEquals(actualMessage,loadProp.getProperty("sendEmailMessage"));
 
+
+    }
+    public void verifyProductPage(){
+        String productPageTitle = getTextFromElement(_productPageTitle);
+        Assert.assertEquals(productPageTitle,loadProp.getProperty("productPageTitle"));
+    }
+    public void verifyEmailAFriendPage(){
+        String emailAFriendPageURL = getCurrentURL();
+        Assert.assertEquals(emailAFriendPageURL,loadProp.getProperty("emailAFriendPageURL"));
 
     }
 

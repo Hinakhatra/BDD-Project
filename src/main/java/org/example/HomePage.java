@@ -1,6 +1,7 @@
 package org.example;
 
 import org.openqa.selenium.By;
+import org.testng.Assert;
 
 public class HomePage extends Utils{
     private By _registerButton = By.cssSelector("a.ico-register");
@@ -19,6 +20,10 @@ public class HomePage extends Utils{
     public void clickOnAppleMacAddToCartButton(){
         //click on Apple mac 13 ADD TO CART Button
         clickOnElement(_addToCartAppleMac);
+    }
+    public void verifyHomepage(){
+        String homepage = getCurrentURL();
+        Assert.assertEquals(homepage,loadProp.getProperty("url"));
     }
 
 }

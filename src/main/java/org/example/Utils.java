@@ -82,7 +82,7 @@ public class Utils extends BasePage{
         return getWindowHandle();
     }
     public static String getCurrentURL(){
-        return getCurrentURL();
+        return driver.getCurrentUrl();
     }
 
     public static String currentTimeStamp() {

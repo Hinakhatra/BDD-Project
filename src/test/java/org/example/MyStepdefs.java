@@ -40,6 +40,7 @@ public class MyStepdefs {
     }
     @Given("I am on homepage")
     public void i_am_on_homepage() {
+        homePage.verifyHomepage();
     }
     @When("I click on Apple MacBook-{int} ADD TO CART Button")
     public void i_click_on_apple_mac_book_add_to_cart_button(Integer int1) {
@@ -47,6 +48,7 @@ public class MyStepdefs {
     }
     @When("I am on product page")
     public void i_am_on_product_page() {
+        productPage.verifyProductPage();
     }
     @When("I click on Email a friend button")
     public void i_click_on_email_a_friend_button() {
@@ -54,7 +56,7 @@ public class MyStepdefs {
     }
     @Then("Email a friend page should appear")
     public void email_a_friend_page_should_appear() {
-
+        productPage.verifyEmailAFriendPage();
     }
     @Then("I enter required Email a friend Details")
     public void i_enter_required_email_a_friend_details() {
