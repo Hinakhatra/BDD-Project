@@ -1,15 +1,20 @@
 package org.example;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class MyStepdefs {
+public class MyStepdefs extends Utils{
     HomePage homePage = new HomePage();
     RegisterPage registerPage = new RegisterPage();
     RegisterResultPage registerResultPage = new RegisterResultPage();
     LoginPage loginPage = new LoginPage();
     ProductPage productPage = new ProductPage();
+    ShoppingCartPage shoppingCartPage = new ShoppingCartPage();
+    CheckingOutAsGuestPage checkingOutAsGuestPage = new CheckingOutAsGuestPage();
+    CheckOutBillingPage checkOutBillingPage = new CheckOutBillingPage();
+    ShippingMethodPage shippingMethodPage = new ShippingMethodPage();
     @Given("I am on registration page")
     public void i_am_on_registration_page() {
         homePage.clickOnRegisterButton();
@@ -73,7 +78,136 @@ public class MyStepdefs {
     }
 
 
+    @Given("I am on DemonopCommerce home page")
+    public void iAmOnDemonopCommerceHomePage() {
+    }
 
+    @When("I am click on {string} button")
+    public void iAmClickOnButton(String button_name) {
+        //clickOnElement(By.xpath("//a[text()='"+button_name+" ']"));
+        homePage.clickOnCategory(button_name);
 
+    }
 
+    @Then("I should able to verify I am navigated to related page{string} successfully")
+    public void iShouldAbleToVerifyIAmNavigatedToRelatedPageSuccessfully(String page_url) {
+       // Assert.assertEquals(getCurrentURL(),page_url);
+        homePage.verifyURL(page_url);
+    }
+
+    @And("I should able to verify the page title as{string}")
+    public void iShouldAbleToVerifyThePageTitleAs(String page_title) {
+      //  Assert.assertEquals(getTextFromElement(By.tagName("h1")),page_title);
+        homePage.verifyPageTitle(page_title);
+    }
+
+    @When("I hover over {string} category link")
+    public void iHoverOverCategoryLink(String categoryName) {
+        homePage.hoverOverCategoryLink(categoryName);
+    }
+
+    @Then("I should be able to verify after hover changes color of category")
+    public void iShouldBeAbleToVerifyAfterHoverChangesColorOfCategory() {
+    }
+
+    @When("I click on {string} subcategory")
+    public void iClickOnSubcategory(String subcategory) {
+        homePage.clickOnSubcategory(subcategory);
+    }
+
+    @Then("I should able to navigated to {string} page successfully")
+    public void iShouldAbleToNavigatedToPageSuccessfully(String page) {
+        homePage.verifySubcategoryPage(page);
+    }
+
+    @When("I click on Build Your Own Computer image")
+    public void iClickOnBuildYourOwnComputerImage() {
+        homePage.clickOnOwnComputer();
+    }
+
+    @Then("I should able to navigate to related product page")
+    public void iShouldAbleToNavigateToRelatedProductPage() {
+        productPage.verifyProductPageForBuilYourOwnComputer();
+    }
+
+    @When("I select all the required pc configuration")
+    public void iSelectAllTheRequiredPcConfiguration() {
+        productPage.buildYourOwnComputer();
+    }
+
+    @And("I click On ADD TO CART Button")
+    public void iClickOnADDTOCARTButton() {
+        productPage.buildOurOwnADDTOCARTButton();
+    }
+
+    @And("I click on Shopping cart Button")
+    public void iClickOnShoppingCartButton() {
+        productPage.shoppingCartOnGreenBar();
+    }
+
+    @Then("I should able to navigate to shopping cart page")
+    public void iShouldAbleToNavigateToShoppingCartPage() {
+        shoppingCartPage.verifyShoppingCartPageURL();
+    }
+
+    @And("I should able to verify desired product with configuration in shopping cart")
+    public void iShouldAbleToVerifyDesiredProductWithConfigurationInShoppingCart() {
+        shoppingCartPage.verifyDetailsOfBuildYourOwnComputer();
+    }
+
+    @When("I click on checkbox of Terms and Conditions and i click on Checkout Button")
+    public void iClickOnCheckboxOfTermsAndConditionsAndIClickOnCheckoutButton() {
+        shoppingCartPage.termsAndConditionAndCheckOutButton();
+    }
+
+    @Then("I should able to navigate to Checkout as guest page")
+    public void iShouldAbleToNavigateToCheckoutAsGuestPage() {
+        checkingOutAsGuestPage.verifyCheckAsGuestPageURL();
+    }
+
+    @And("I click on CHECKOUT AS GUEST Button")
+    public void iClickOnCHECKOUTASGUESTButton() {
+        checkingOutAsGuestPage.clickOnCheckoutAsGuest();
+    }
+
+    @And("I should able to navigate to Checkout Billing page")
+    public void iShouldAbleToNavigateToCheckoutBillingPage() {
+        checkOutBillingPage.checkOutBillingPageURL();
+    }
+
+    @When("I fill all required details and i click on continue button")
+    public void iFillAllRequiredDetailsAndIClickOnContinueButton() {
+        checkOutBillingPage.fillInBillingDetails();
+    }
+
+    @Then("I should able to navigate to shipping method page")
+    public void iShouldAbleToNavigateToShippingMethodPage() {
+        shippingMethodPage.verifyShippingMethodPageURL();
+    }
+
+    @And("I click on NextDay Air radio Button and i click on CONTINUE Button")
+    public void iClickOnNextDayAirRadioButtonAndIClickOnCONTINUEButton() {
+        shippingMethodPage.clickOnShippingMethod();
+    }
+
+    @And("I click on credit Card radio Button and i click on CONTINUE Button")
+    public void iClickOnCreditCardRadioButtonAndIClickOnCONTINUEButton() {
+        shippingMethodPage.selectCreditCard();
+    }
+
+    @When("I fill all required payment information and i click on CONTINUE Button")
+    public void iFillAllRequiredPaymentInformationAndIClickOnCONTINUEButton() {
+        shippingMethodPage.paymentInfo();
+    }
+
+    @And("I click on CONFIRM Button")
+    public void iClickOnCONFIRMButton() {
+        shippingMethodPage.confirmOrder();
+    }
+
+    @Then("I should able to see the message Your order has been successfully processed!")
+    public void iShouldAbleToSeeTheMessageYourOrderHasBeenSuccessfullyProcessed() {
+        shippingMethodPage.verifyConfirmOrderMessage();
+    }
 }
+

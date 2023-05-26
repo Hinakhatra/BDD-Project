@@ -15,6 +15,7 @@ public class Hooks extends Utils{
     }
     @After
     public void tearDOwn(Scenario scenario){
+        //Taking screenshot
         if (scenario.isFailed()) {
             TakesScreenshot ts = (TakesScreenshot) driver;
             byte[] src = ts.getScreenshotAs(OutputType.BYTES);
